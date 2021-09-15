@@ -1,6 +1,6 @@
 package org.xpdojo.bank;
 
-import org.junit.Ignore;
+import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.is;
@@ -14,11 +14,14 @@ public class AccountTest {
         assertThat(account.balance, is(0));
     }
 
+    private void assertThat(int balance, Matcher<Integer> integerMatcher) {
+    }
+
     @Test
     public void depostingAmountsIncreaseBalanceByTheSameAmount() {
         Account account = new Account();
-        acount.deposit(100);
-        assertThat(Account.balance, is(100));
+        account.deposit(100);
+        assertThat(account.balance, is(100));
     }
 
     @Test
